@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        
+    <form action="" method="POST">
+            {% csrf_token %}
+        <input type="number" step='any' name="d"><br>
+        <label ><input type="radio" name="s" value="86x" checked> single </label>
+        <label ><input type="radio" name="s" value="64x"> double </label>
+        <br>
+        <button type="submit">คำนวณ</button>
+    </form>
+    <br>
+    <label >{{l}}</label>
+</body>
+</html>

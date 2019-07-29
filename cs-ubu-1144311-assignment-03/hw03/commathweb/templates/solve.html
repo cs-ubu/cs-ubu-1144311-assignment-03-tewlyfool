@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        
+        <form action="" method="POST">
+                {% csrf_token %}
+                <label for="">Xi</label>
+   <input type="number" step="1"  name="xi" id="xi" onmousemove="showt()"> 
+   <div>
+        <div style="float: left; width: 70%" id='Ain'></div>
+        <div style="float: right; width: 30%" id="bin">
+                </div>
+    </div>
+<!--     
+   <label for="">ไฟล์ A</label> 
+   <input type="file" name="A" id="">
+   <label for="">ไฟล์ b</label> 
+   <input type="file" name="b" id="">
+    <br> -->
+    <button type="submit">submit</button>
+        </form>
+<label id='yy'>
+    {% for i in x %}
+    x{{i}}
+    {% endfor %}
+</label>
+<br>
+<label id='ff'>
+    {% for i in l %}
+    {{i}} &nbsp;
+    {% endfor %}
+</label>
+ 
+<script>
+    function showt(){
+var iv = document.getElementById('xi').value;
+var ff = document.getElementById('ff');
+ff.innerText='';
+var yy = document.getElementById('yy');
+yy.innerText='';
+
+var d = document.getElementById('Ain');
+d.innerHTML='';
+for (let index = 0; index < parseInt(iv); index++) {
+    for (let idx = 0; idx < parseInt(iv); idx++) {
+    var i = document.createElement('input');
+    var la = document.createElement('label');
+    latext='U'+index+idx;
+    la.htmlFor= latext;
+    la.innerHTML = latext;
+    i.setAttribute('type','number');
+    i.setAttribute('id',latext);
+    i.setAttribute('name',latext);
+    i.setAttribute('step','any');
+    d.appendChild(la);
+    d.appendChild(i);
+    // document.body.insertBefore(la, i);
+    }
+    var b = document.createElement('br');
+    d.appendChild(b);
+}
+var divb = document.getElementById('bin');
+divb.innerHTML='';
+
+for (let index = 0; index < parseInt(iv); index++) {
+    
+    var i = document.createElement('input');
+    var la = document.createElement('label');
+    latext='c'+index;
+    la.htmlFor= latext;
+    la.innerHTML = latext;
+    i.setAttribute('type','number');
+    i.setAttribute('id',latext);
+    i.setAttribute('name',latext);
+    i.setAttribute('step','any');
+    divb.appendChild(la);
+    divb.appendChild(i);
+    var b = document.createElement('br');
+    divb.appendChild(b);
+}
+    }
+// console.log(iv);
+// ff.innerText=iv;
+    
+</script>
+    
+
+    
+</body>
+</html>
